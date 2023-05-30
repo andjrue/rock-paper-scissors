@@ -1,18 +1,23 @@
 var compSelection = ['rock', 'paper', 'scissors'];
-var userSelection = prompt('Please choose rock, paper, or scissors:').toLowerCase();
 var userWin = 0;
 var compWin = 0;
 
-if (userSelection !== 'rock' && userSelection !== 'paper' && userSelection !== 'scissors') {
-    alert('Please try again.');
-}
+// calls buttons from html 
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
 
+// event listeners for button presses
+rock.addEventListener('click', () => winDecision(getComputerChoice(compSelection), 'rock'));
+paper.addEventListener('click', () => winDecision(getComputerChoice(compSelection), 'paper'));
+scissors.addEventListener('click', () => winDecision(getComputerChoice(compSelection), 'scissors'));
+
+// random select for computer choice
 function getComputerChoice(compSelection) {
     return compSelection[Math.floor(Math.random() * compSelection.length)];
 }
 
-console.log(getComputerChoice(compSelection)); //- Debug, computer guess working
-
+// decides who won/ties
 function winDecision(compSelection, userSelection) {
     if (userSelection == 'rock' && compSelection == 'paper') {
         alert('You lose! Computer chose paper!');
@@ -37,10 +42,3 @@ function winDecision(compSelection, userSelection) {
     }
 }
 
-var computerChoice = getComputerChoice(compSelection);
-console.log(computerChoice); // Debug, computer guess working
-
-winDecision(computerChoice, userSelection);
-
-console.log('User Wins: ' + userWin);
-console.log('Computer Wins: ' + compWin);

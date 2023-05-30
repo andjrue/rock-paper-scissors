@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+  
+.buttons {
+    text-align: center;
+}
+  
+body {
+    background: #0E0E24;
+}
+  
+.container {
+    color: rgb(255, 249, 239);
+    border: 2px solid rgb(255, 249, 239);
+    text-align: center;
+}
+
+.container2 {
+    color: rgb(255, 249, 239);
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 500px;
+    height: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+
